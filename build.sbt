@@ -12,3 +12,4 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "org.postgresql" % "postgresql" % postgresVersion
 )
+
