@@ -6,20 +6,20 @@ object Main extends App {
     .appName("DE Project")
     .config("spark.master", "local")
     .getOrCreate()
-
+  
   val driver = "org.postgresql.Driver"
-  val url = "jdbc:postgresql://localhost:5432/rtjvm"
-  val user = "docker"
-  val password = "docker"
+  val url = "jdbc:postgresql://localhost:5432/sample-db"
+  val user = "babebp"
+  val password = "1234ab"
 
-  val employeesDF = spark.read
+  val countryDF = spark.read
     .format("jdbc")
     .option("driver", driver)
     .option("url", url)
     .option("user", user)
     .option("password", password)
-    .option("dbtable", "public.employees")
+    .option("dbtable", "public.country")
     .load()
 
-  employeesDF.show()
+  countryDF.show()
 }
