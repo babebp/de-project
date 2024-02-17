@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: sample-db
+      POSTGRES_USER: babebp
+      POSTGRES_PASSWORD: 1234ab
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./sample.sql:/docker-entrypoint-initdb.d/sample.sql
+
